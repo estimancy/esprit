@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @data_function.requirement_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @data_function.content %>
+</p>
+
+<p>
+  <strong>Attribute:</strong>
+  <%= @data_function.attribute %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @data_function.type %>
+</p>
+
+<p>
+  <strong>Ret:</strong>
+  <%= @data_function.ret %>
+</p>
+
+<%= link_to 'Edit', edit_data_function_path(@data_function) %> |
+<%= link_to 'Back', data_functions_path %>

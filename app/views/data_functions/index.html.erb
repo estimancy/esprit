@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Data Functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th>Content</th>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Ret</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_functions.each do |data_function| %>
+      <tr>
+        <td><%= data_function.requirement_id %></td>
+        <td><%= data_function.content %></td>
+        <td><%= data_function.data_attribute %></td>
+        <td><%= data_function.data_type %></td>
+        <td><%= data_function.ret %></td>
+        <td><%= link_to 'Show', data_function %></td>
+        <td><%= link_to 'Edit', edit_data_function_path(data_function) %></td>
+        <td><%= link_to 'Destroy', data_function, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data function', new_data_function_path %>

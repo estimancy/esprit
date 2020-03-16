@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requirement:</strong>
+  <%= @transactional_function.requirement_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @transactional_function.content %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transactional_function.type %>
+</p>
+
+<p>
+  <strong>Traceability:</strong>
+  <%= @transactional_function.traceability %>
+</p>
+
+<p>
+  <strong>Det:</strong>
+  <%= @transactional_function.det %>
+</p>
+
+<%= link_to 'Edit', edit_transactional_function_path(@transactional_function) %> |
+<%= link_to 'Back', transactional_functions_path %>

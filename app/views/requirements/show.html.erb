@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-12">
+    <h3>
+      <%= link_to "Requirements", root_url %> < Requirement #<%= @requirement.id %>
+    </h3>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-12">
+    <p>
+      <%= @requirement.content %>
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-12">
+    <h5>
+      Transactional Functions
+    </h5>
+    <hr>
+
+    <table id="myTable" class="tablesorter">
+      <thead>
+        <tr>
+          <th>Contenu</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @requirement.transactional_functions.each do |tf| %>
+          <tr>
+            <td>
+              <%= tf.content %>
+            </td>
+            <td>
+              <%= tf.tf_type %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <p>
+      <%= link_to 'Edit', edit_requirement_path(@requirement) %> |
+      <%= link_to 'Back', requirements_path %>
+    </p>
+  </div>
+</div>

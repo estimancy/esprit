@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transactional Functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th>Content</th>
+      <th>Type</th>
+      <th>Traceability</th>
+      <th>Det</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactional_functions.each do |transactional_function| %>
+      <tr>
+        <td><%= transactional_function.requirement_id %></td>
+        <td><%= transactional_function.content %></td>
+        <td><%= transactional_function.type %></td>
+        <td><%= transactional_function.traceability %></td>
+        <td><%= transactional_function.det %></td>
+        <td><%= link_to 'Show', transactional_function %></td>
+        <td><%= link_to 'Edit', edit_transactional_function_path(transactional_function) %></td>
+        <td><%= link_to 'Destroy', transactional_function, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transactional function', new_transactional_function_path %>
