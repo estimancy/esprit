@@ -14,12 +14,37 @@
 </div>
 
 <script>
+
     $(function() {
-        $("#myTable").tablesorter({
-            theme: 'default',
-            widgets: ['filter']
-        });
+        $("#myTable")
+            .tablesorter({
+                theme: 'default',
+                filter_columnFilters: true,//If u want a single filter for each column
+                headers: {
+                    0: { filter: false } // headers option (Alphanumeric column)
+                },
+                widgets: ['zebra', 'filter'],
+                widgetOptions: {
+                    filter_reset: '.reset'
+                }
+            });
+
+        // External search
+        // buttons set up like this:
+        // <button type="button" class="search" data-filter-column="4" data-filter-text="2?%">Saved Search</button>
+        $('button').click(function () {
+            var $t = $(this),
+                col = $t.data('filter-column'), // zero-based inde
+                filter = [];
+
+            filter[col] = $t.text(); // text to add to filter
+            $('#myTable').trigger('search', [filter]);
+            return false;
+        })
+
     });
+
+
 </script>
 
 </body>
