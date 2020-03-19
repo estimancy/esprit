@@ -18,3 +18,4 @@ config/gemnasium.yml
 config/license_finder_SAVE.yml
 /config/database.yml
 /config/sensitive_settings.yml
+/log/development.log
