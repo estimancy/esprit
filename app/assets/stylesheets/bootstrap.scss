@@ -1854,6 +1854,17 @@ pre code {
   border: 0;
 }
 
+table.tablesorter {
+  //max-width:100%;
+  //white-space:nowrap;
+  border: none;
+}
+
+input.tablesorter-filter{
+  max-width: 160px;
+  width: 70%;
+}
+
 .form-control {
   display: block;
   width: 100%;

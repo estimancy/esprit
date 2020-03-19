@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20200213133421) do
   create_table "data_functions", force: :cascade do |t|
     t.integer  "requirement_id", limit: 4
     t.text     "content",        limit: 65535
-    t.string   "data_attribute", limit: 255
-    t.string   "data_type",      limit: 255
+    t.string   "attribute",      limit: 255
+    t.string   "type",           limit: 255
     t.integer  "ret",            limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20200213133421) do
   create_table "transactional_functions", force: :cascade do |t|
     t.integer  "requirement_id", limit: 4
     t.text     "content",        limit: 65535
-    t.string   "tf_type",        limit: 255
+    t.string   "type",           limit: 255
     t.string   "traceability",   limit: 255
     t.integer  "det",            limit: 4
     t.datetime "created_at",                   null: false
