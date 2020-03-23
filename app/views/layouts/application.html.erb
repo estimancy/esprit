@@ -136,24 +136,19 @@
             }
         }
     });*/
-
-   </script>
+ </script>
 
 <script>
     $(function() {
-        $("#myTable")
-            .tablesorter({
-                theme: 'default',
-                widgets: ['zebra', 'filter'],
-                // widgetOptions: {
-                //     filter_columnFilters: true,
-                //     filter_reset: '.reset'
-                // }
-
-            })
+        $("#myTable").tablesorter({
+            theme: 'default',
+            widgets: ['zebra', 'filter'],
+            widgetOptions: {
+                filter_reset: '.reset'
+            }
+        });
     });
 </script>
-
 
 
 </body>
