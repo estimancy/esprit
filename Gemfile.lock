@@ -65,6 +65,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tablesorter (1.27.1)
       railties (>= 3.2)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     loofah (2.3.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -159,6 +162,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-tablesorter
+  jquery-turbolinks
   mysql2
   rails (= 4.2.10)
   rubyXL (~> 3.3, >= 3.3.21)

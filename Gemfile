@@ -49,4 +49,6 @@ end
 
 gem 'jquery-tablesorter'
 
+gem 'jquery-turbolinks'
+
 
