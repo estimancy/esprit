@@ -51,4 +51,4 @@ gem 'jquery-tablesorter'
 
 gem 'jquery-turbolinks'
 
-
+gem 'will_paginate'
