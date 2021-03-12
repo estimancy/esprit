@@ -1,23 +1,155 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Esprit</title>
+<head>
+  <title>Esprit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<div class="container">
+  <%= yield %>
+</div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.min.js" integrity="sha256-WX1A5tGpPfZZ48PgoZX2vpOojjCXsytpCvgPcRPnFKU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.default.min.css" integrity="sha256-5sgExNTnkN8NcApKIU73/aqgZmqq/zJp9+9zXf9aSEw=" crossorigin="anonymous" />
 
-    <%= csrf_meta_tags %>
+<script>
+    // $(function() {
+    //     $("#myTable")
+    //         .tablesorter({
+    //             theme: 'default',
+    //             filter_columnFilters: true,//If u want a single filter for each column
+    //             headers: {
+    //                 0: { filter: false } // headers option (Alphanumeric column)
+    //             },
+    //             widgets: ['zebra', 'filter'],
+    //             widgetOptions: {
+    //                 filter_reset: '.reset'
+    //             }
+    //         });
+    //
+    //     // External search
+    //     // buttons set up like this:
+    //     // <button type="button" class="search" data-filter-column="4" data-filter-text="2?%">Saved Search</button>
+    //     $('button').click(function () {
+    //         var $t = $(this),
+    //             col = $t.data('filter-column'), // zero-based inde
+    //             filter = [];
+    //
+    //         filter[col] = $t.text(); // text to add to filter
+    //         $('#myTable').trigger('search', [filter]);
+    //         return false;
+    //     })
+    //
+    // });
 
-  </head>
+//
+/*
 
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+        $("#myTable").tablesorter({
+            theme:  'default',
+            widgets: ['zebra', 'filter'],
+            widgetOptions: {
+                filter_external : '.search',
+                filter_defaultFilter : { 1 : '~{query}' },
+                filter_columnFilters: true,
+                filter_placeholder: { search : 'Search...'},
+                filter_saveFilters: true,
+                filter_reset : '.reset'
+            }
 
+        });
+
+        $('button[data-column]').on('click', function() {
+            var $this = $(this),
+                totalColumns = $table[0].config.columns,
+                col = $this.data('column'), // zero-based index or "all"
+                filter = [];
+
+            // text to add to filter
+            filter[ col === 'all' ? totalColumns : col ] = $this.text();
+            $table.trigger('search', [ filter ]);
+            return false;
+        });
+*/
+
+
+        //$(function() {
+
+            /*var $table = $("#myTable").tablesorter({
+                widgets: ['zebra'],
+                //widgetOptions : {
+                    //if true, a filter will be added to the top of each table column.
+                    //filter_columnFilters : true,
+                    //filter_cellFilter : 'table-filter-cell'
+
+                    // filter_anyMatch replaced! Instead use the filter_external option
+                    // Set to use a jQuery selector (or jQuery object) pointing to the
+                    // external filter (column specific or any match)
+                    //filter_external : '.search',
+                    // add a default type search to the first name column
+                    //filter_defaultFilter: { 1 : '~{query}' },
+                    // include column filters
+                    //filter_columnFilters: true,
+                    //filter_placeholder: { search : 'Search...' },
+                   //filter_saveFilters : true,
+                    //filter_reset: '.reset'
+                }
+            });
+
+            // make demo search buttons work
+            /!*$('button[data-column]').on('click', function() {
+                var $this = $(this),
+                    totalColumns = $table[0].config.columns,
+                    col = $this.data('column'), // zero-based index or "all"
+                    filter = [];
+
+                // text to add to filter
+                filter[ col === 'all' ? totalColumns : col ] = $this.text();
+                $table.trigger('search', [ filter ]);
+                return false;
+            });*!/
+
+        });*/
+    //})
+
+   /* var tablesorterOptions = {
+        theme: 'blue',
+        widgets: ["zebra"]
+    };
+
+    $("#myTable").tabs({
+        create: function (event, ui) {
+            var $t = ui.panel.find('table');
+            if ($t.length) {
+                $t.tablesorter(tablesorterOptions);
+            }
+        },
+        activate: function (event, ui) {
+            var $t = ui.newPanel.find('table');
+            if ($t.length) {
+                if ($t[0].config) {
+                    $t.trigger('applyWidgets');
+                } else {
+                    $t.tablesorter(tablesorterOptions);
+                }
+            }
+        }
+    });*/
+ </script>
+
+<script>
+    $(function() {
+        $("#myTable").tablesorter({
+            theme: 'default',
+            widgets: ['zebra', 'filter'],
+            widgetOptions: {
+                filter_reset: '.reset'
+            }
+        });
+    });
+</script>
+
+
+</body>
 </html>

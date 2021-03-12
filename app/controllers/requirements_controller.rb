@@ -4,7 +4,8 @@ class RequirementsController < ApplicationController
   # GET /requirements
   # GET /requirements.json
   def index
-    @requirements = Requirement.all
+    #@requirements = Requirement.all
+    @requirements  = Requirement.paginate(page: params[:page], per_page: 20)
   end
 
   # GET /requirements/1
