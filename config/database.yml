@@ -22,7 +22,8 @@
 #  database: Esprit_development
 
 development:
-  adapter: mysql2
+#  adapter: mysql2
+  adapter: pg
   encoding: utf8
   host: localhost
   database: esprit_development
